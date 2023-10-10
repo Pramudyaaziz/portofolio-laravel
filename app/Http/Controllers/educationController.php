@@ -96,9 +96,12 @@ class educationController extends Controller
             [
             'judul' => 'required',
             'info1' => 'required',
+            'info2' => 'required',
+            'info3' => 'required',
             'tgl_mulai' => 'required',
             ],[
-                'judul.required' => 'Posisi wajib disi',
+                'judul.required' => 'Perguruan Tinggi wajib disi',
+                'info1.required' => 'Fakultas wajib disi',
                 'info1.required' => 'Nama Perusahaan wajib disi',
                 'tgl_mulai.required' => 'Tanggal Mulai wajib disi',
             ]
@@ -107,6 +110,8 @@ class educationController extends Controller
         $data = [
             'judul'=>$request->judul,
             'info1'=>$request->info1,
+            'info2'=>$request->info2,
+            'info3'=>$request->info3,
             'tgl_mulai'=>$request->tgl_mulai,
             'tgl_akhir'=>$request->tgl_akhir,
             // 'isi'=>$request->isi,

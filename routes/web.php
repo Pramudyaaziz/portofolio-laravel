@@ -8,6 +8,8 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\halamanController;
 use App\Http\Controllers\educationController;
 use App\Http\Controllers\experienceController;
+use App\Http\Controllers\profileController;
+use App\Http\Controllers\skillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +40,9 @@ Route::prefix('dashboard')->middleware('auth')->group(
         Route::resource('halaman', halamanController::class);
         Route::resource('experience', experienceController::class);
         Route::resource('education', educationController::class);
+        Route::get('skill',[skillController::class, "index"])->name('skill.index');
+        Route::post('skill',[skillController::class, "update"])->name('skill.update');
+        Route::get('profile',[profileController::class, "index"])->name('profile.index');
+        Route::post('profile',[profileController::class, "update"])->name('profile.update');
     }
     );
